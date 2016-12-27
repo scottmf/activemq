@@ -23,7 +23,6 @@ RUN /app/setup/install
 
 ARG zk_address=zoo1:2181,zoo2:2181,zoo3:2181
 ENV ZKADDRESS=${zk_address}
-RUN sed -e "s/##ZKADDRESS##/$ZKADDRESS/" /var/tmp/activemq.xml > /opt/activemq/conf/activemq.xml
 
 # Copy the app setting
 COPY assets/init.py /app/init.py
